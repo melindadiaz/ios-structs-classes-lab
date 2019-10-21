@@ -24,9 +24,10 @@ fred.name = "Brick"
 fred.weight = 999.2
 fred.homePlanet = "Mars"
 ```
+homeplanet is a constant
 
 Fix the class definition for `Giant` in the space below so that it **does** work:
-
+var homePlanet: String = "Earth"
 
 ## Question 2
 
@@ -50,7 +51,9 @@ bilbo.homePlanet = "Saturn"
 ```
 
 Change the declaration of `bilbo` so that the above three lines of code **do** work:
-
+ again bilbo is a constant  so you need to change the let to var
+ 
+ var bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus") 
 
 ## Question 3
 
