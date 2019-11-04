@@ -29,6 +29,14 @@ homeplanet is a constant
 Fix the class definition for `Giant` in the space below so that it **does** work:
 var homePlanet: String = "Earth"
 
+```
+class Giant {
+ var name: String = "Fred"
+ var weight: Double = 340.0
+ var homePlanet: String = "Earth"
+}
+```
+
 ## Question 2
 
 Take a look at this struct that represents an alien:
@@ -51,10 +59,11 @@ bilbo.homePlanet = "Saturn"
 ```
 
 Change the declaration of `bilbo` so that the above three lines of code **do** work:
+```
  again bilbo is a constant  so you need to change the let to var
  
  var bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus") 
-
+```
 ## Question 3
 
 Consider this bit of code that uses the `Giant` class:
@@ -67,7 +76,9 @@ jason.name = "Jason"
 ```
 
 What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
-
+```
+the value of edger.name will be edgar. jason.name will not compile. This is because .name redeclares the name and Jason is a constant.
+```
 
 ## Question 4
 
@@ -80,8 +91,9 @@ charlesFromJupiter.homePlanet = "Jupiter"
 ```
 
 What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
-
-
+```
+The code will run and the value of charles from jupiter will be jupiter because it was redeclared. 
+```
 ## Question 5
 
 Here's a struct that represents a bank account:
@@ -102,9 +114,24 @@ struct BankAccount {
 ```
 
 Does this code work? Why or why not?
-
+```
+compiler error in a struct the methods are immutable
+```
 Fix the `BankAccount` struct so it does work.
+```
+class BankAccount {
+    var owner: String = ""
+    var balance: Double = 0.0
 
+ func deposit(_ amount: Double) {
+ balance += amount
+ }
+
+ func withdraw(_ amount: Double) {
+ balance -= amount
+ }
+}
+```
 Given the code below (which should incorporate any fixes you made):
 
 ```swift
